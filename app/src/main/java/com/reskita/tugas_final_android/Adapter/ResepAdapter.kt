@@ -24,6 +24,11 @@ class ResepAdapter: RecyclerView.Adapter<ResepAdapter.Holder>() {
         }
     }
 
+    fun setData(list: MutableList<Result>) {
+        this.listResep = list
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_resep, parent, false)
         return Holder(view)
