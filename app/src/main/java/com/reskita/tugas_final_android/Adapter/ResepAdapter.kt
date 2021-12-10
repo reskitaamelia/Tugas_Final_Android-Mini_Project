@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.item_resep.view.*
 class ResepAdapter(private val listener: Listener): RecyclerView.Adapter<ResepAdapter.Holder>() {
 
     interface Listener {
-        fun onItemClick()
+        fun onItemClick(receipt: Result)
     }
 
     private var listResep = mutableListOf<Result>()
@@ -24,6 +24,10 @@ class ResepAdapter(private val listener: Listener): RecyclerView.Adapter<ResepAd
                     .load(receipt.thumb)
                     .into(resepThumb)
                 resepTitle.text = receipt.title
+                resepLevel.text = "Level : " + receipt.dificulty
+                this.setOnClickListener {
+                    listener.onItemClick(receipt)
+                }
             }
         }
     }

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.reskita.tugas_final_android.Model.Result
 import com.reskita.tugas_final_android.R
 
 class DetailFragment : Fragment() {
@@ -14,8 +15,13 @@ class DetailFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
     companion object {
         @JvmStatic
         fun newInstance() = DetailFragment()
+        var selectedReceipt: Result? = null
     }
 }

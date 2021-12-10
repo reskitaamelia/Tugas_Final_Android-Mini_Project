@@ -19,7 +19,7 @@
             android:src="@color/black"
             android:scaleType="centerCrop"/>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -34,7 +34,16 @@
                 android:textColor="@color/black"
                 android:padding="5dp"/>
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/resepLevel"
+                android:layout_alignParentBottom="true"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Level : "/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
