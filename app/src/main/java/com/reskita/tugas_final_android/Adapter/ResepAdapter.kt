@@ -9,12 +9,16 @@ import com.reskita.tugas_final_android.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_resep.view.*
 
-class ResepAdapter: RecyclerView.Adapter<ResepAdapter.Holder>() {
+class ResepAdapter(private val listener: Listener): RecyclerView.Adapter<ResepAdapter.Holder>() {
+
+    interface Listener {
+        fun onItemClick()
+    }
 
     private var listResep = mutableListOf<Result>()
 
     inner class Holder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(receipt: Result) {
+        fun bind(receipt: Result, listener: Listener) {
             with(itemView) {
                 Picasso.get()
                     .load(receipt.thumb)
@@ -35,7 +39,7 @@ class ResepAdapter: RecyclerView.Adapter<ResepAdapter.Holder>() {
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(listResep[position])
+        holder.bind(listResep[position], listener)
     }
 
     override fun getItemCount(): Int {
