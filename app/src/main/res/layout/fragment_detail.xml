@@ -38,7 +38,6 @@
                 android:id="@+id/detailTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="awdoaiwhd aiwjdaowjd oaijdao jaoiwdja widoaijw d"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -48,9 +47,50 @@
                 android:id="@+id/detailLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Level : "
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/detailDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bahan : "
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/detailBahan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Langkah-langkah : "
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/detailStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="20dp"/>
 
         </LinearLayout>
     </ScrollView>
