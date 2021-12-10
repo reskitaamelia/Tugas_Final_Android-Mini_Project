@@ -13,6 +13,7 @@
         android:background="@color/white">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/detailToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Detail Resep"
@@ -91,6 +92,16 @@
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:layout_marginEnd="20dp"/>
+
+            <Button
+                android:id="@+id/shareBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:layout_margin="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textSize="12sp"
+                android:backgroundTint="@color/black"/>
 
         </LinearLayout>
     </ScrollView>

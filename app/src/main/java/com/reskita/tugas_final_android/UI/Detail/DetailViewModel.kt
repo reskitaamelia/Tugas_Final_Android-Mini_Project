@@ -1,7 +1,9 @@
 package com.reskita.tugas_final_android.UI.Detail
 
+import android.content.Intent
 import android.util.Log
 import android.view.View
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
 import com.reskita.tugas_final_android.Model.DataResep
 import com.reskita.tugas_final_android.Model.DetailResep
@@ -23,9 +25,12 @@ class DetailViewModel: ViewModel() {
             if(response.isSuccessful) {
                 with(view) {
                     val data = response!!.body()!!.results
+                    DetailFragment.bahan = getBahan(data.ingredient)
+                    DetailFragment.step = getStep(data.step)
                     detailDesc.text = data.desc
-                    detailBahan.text = getBahan(data.ingredient)
-                    detailStep.text = getStep(data.step)
+                    detailBahan.text = DetailFragment.bahan
+                    detailStep.text = DetailFragment.step
+                    detailStep.tag = "loaded"
                 }
             }
         } catch (e: Exception) {

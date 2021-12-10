@@ -1,5 +1,6 @@
 package com.reskita.tugas_final_android.UI.Detail
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +26,10 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        detailToolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        
         Picasso.get()
             .load(selectedReceipt!!.thumb)
             .into(detailThumb)
@@ -37,11 +41,33 @@ class DetailFragment : Fragment() {
             viewModel.getDetail(selectedReceipt!!.key, view)
         }
 
+        shareBtn.setOnClickListener {
+            if(detailStep.tag == "loaded") {
+
+                val txt = "${selectedReceipt!!.title}\n\n" +
+                        "Bahan : \n" +
+                        "$bahan\n\n" +
+                        "Langkah-langkah : \n" +
+                        "$step"
+
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, txt)
+                    type = "text/plain"
+                }
+
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                startActivity(shareIntent)
+            }
+        }
+
     }
 
     companion object {
         @JvmStatic
         fun newInstance() = DetailFragment()
         var selectedReceipt: Result? = null
+        var bahan = ""
+        var step = ""
     }
 }
