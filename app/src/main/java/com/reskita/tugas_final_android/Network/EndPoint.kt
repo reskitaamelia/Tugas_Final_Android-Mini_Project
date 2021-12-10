@@ -13,6 +13,6 @@ interface EndPoint {
     suspend fun getListReceipt(): Response<DataResep>
 
     @GET
-    suspend fun getSpecification(@Url url : String) : Response<DetailResep>
+    suspend fun getDetail(@Url url : String) : Response<DetailResep>
 
 }
