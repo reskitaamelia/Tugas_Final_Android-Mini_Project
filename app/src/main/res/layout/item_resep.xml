@@ -16,7 +16,8 @@
             android:id="@+id/resepThumb"
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:src="@color/black"/>
+            android:src="@color/black"
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
             android:layout_width="match_parent"
